@@ -12,13 +12,13 @@ export class SignupPageComponent implements OnInit {
   feedbackEnabled = false;
   error = null;
   processing = false;
-  data = {  
+  data = {
     username: String,
     password: String
   }
   // ... model (e,g. username: String)
 
-  constructor( public authService: AuthService, private router: Router ) { }
+  constructor( public authService: AuthService, private router: Router ) {}
 
   ngOnInit() {
   }
@@ -27,11 +27,13 @@ export class SignupPageComponent implements OnInit {
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid) {
+      console.log('submit');
       this.processing = true;
       this.authService.signup(this.data)
         .then((result) => {
-          // this.router.navigate(['']);
-                   // ... handle result, reset form, etc...
+          console.log('hola');
+          this.router.navigate(['']);
+          // ... handle result, reset form, etc...
           // ... navigate with this.router.navigate(['...'])
           // ... maybe turn this to false if your're staying on the page - this.processing = false;
         })
