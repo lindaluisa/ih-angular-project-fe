@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListUsersComponent } from '../../components/list-users/list-users.component';
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-user-list-page',
@@ -7,10 +9,14 @@ import { ListUsersComponent } from '../../components/list-users/list-users.compo
   styleUrls: ['./user-list-page.component.css']
 })
 export class UserListPageComponent implements OnInit {
+  userList: Array<Object>;
 
-  constructor() { }
+
+  constructor(private entryService: UserService) { }
 
   ngOnInit() {
+    this.entryService.getUsers()
+    .then((result) => this.userList = result);
   }
 
 }
