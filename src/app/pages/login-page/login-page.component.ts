@@ -3,11 +3,11 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.css']
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.css']
 })
-export class SignupPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
 
   feedbackEnabled = false;
   error = null;
@@ -15,7 +15,7 @@ export class SignupPageComponent implements OnInit {
   username: String;
   password: String;
 
-  constructor( public authService: AuthService, private router: Router ) {}
+  constructor( public authService: AuthService, private router: Router ) { }
 
   ngOnInit() {
   }
@@ -24,11 +24,10 @@ export class SignupPageComponent implements OnInit {
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid) {
-      console.log('submit');
+      console.log('submit-login');
       this.processing = true;
-      this.authService.signup({username: this.username, password: this.password})
+      this.authService.login({username: this.username, password: this.password})
         .then((result) => {
-          console.log('hola');
           this.router.navigate(['']);
         })
         .catch((err) => {

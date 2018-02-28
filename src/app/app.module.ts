@@ -8,19 +8,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent },
-  { path: 'auth/signup',  component: SignupPageComponent }
+  { path: 'auth/signup',  component: SignupPageComponent },
+  { path: 'auth/login',  component: LoginPageComponent }
  ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
