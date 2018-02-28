@@ -1,8 +1,23 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
+    Sharemo
   </a>
+  
+  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div *ngIf="loading">
+      <span class="username text">loading...</span>
+    </div>
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/profile']">{{user.username}}</a>
+      <a [routerLink]="['/logout']">logout</a>
+    </div>
+    <div *ngIf="!loading && anon">
+      <a [routerLink]="['/login']">login</a>
+      <a [routerLink]="['/signup']">signup</a>
+    </div>
+  </div>
+
 </nav>
 
 <router-outlet></router-outlet>
