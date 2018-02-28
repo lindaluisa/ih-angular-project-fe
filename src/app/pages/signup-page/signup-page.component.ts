@@ -24,12 +24,10 @@ export class SignupPageComponent implements OnInit {
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid) {
-      console.log('submit');
       this.processing = true;
       this.authService.signup({username: this.username, password: this.password})
         .then((result) => {
-          console.log('hola');
-          this.router.navigate(['']);
+          this.router.navigate(['/']);
         })
         .catch((err) => {
           this.error = err.error.error; // :-)

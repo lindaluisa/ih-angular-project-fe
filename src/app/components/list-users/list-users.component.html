@@ -1,0 +1,12 @@
+<p>
+  list-users works!
+</p>
+
+<div *ngIf="userList">
+  <ul>
+    <li *ngFor="let element of userList" class="user-element">
+      <a [routerLink]="['',element._id]"><span>{{element.username}}</span></a>
+      <!-- <p><img src={{element.image}}></p> -->
+    </li>
+  </ul>
+</div>

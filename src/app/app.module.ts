@@ -9,16 +9,21 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { UserListPageComponent } from './pages/user-list-page/user-list-page.component';
+
+import { ListUsersComponent } from './components/list-users/list-users.component';
 
 import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './services/init-auth-guard.service'
 import { RequireAnonGuardService } from './services/require-anon-guard.service';
 import { RequireUserGuardService } from './services/require-user-guard.service';
+import { ListUserService } from './services/list-user.service';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'auth/signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
+  { path: 'users',  component: UserListPageComponent, canActivate: [ RequireUserGuardService ] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
  ];
@@ -29,7 +34,9 @@ const routes: Routes = [
     AppComponent,
     LandingPageComponent,
     SignupPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    UserListPageComponent,
+    ListUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ const routes: Routes = [
     AuthService, 
     InitAuthGuardService,
     RequireAnonGuardService,
-    RequireUserGuardService
+    RequireUserGuardService,
+    ListUserService
   ],
   bootstrap: [AppComponent]
 })
