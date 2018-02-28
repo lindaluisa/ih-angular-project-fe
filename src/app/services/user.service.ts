@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class ListUserService {
+export class UserService {
 
   private baseUrl = 'http://localhost:3000';
 

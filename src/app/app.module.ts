@@ -17,7 +17,7 @@ import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './services/init-auth-guard.service'
 import { RequireAnonGuardService } from './services/require-anon-guard.service';
 import { RequireUserGuardService } from './services/require-user-guard.service';
-import { ListUserService } from './services/list-user.service';
+import { UserService } from './services/user.service';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuardService ] },
@@ -49,7 +49,7 @@ const routes: Routes = [
     InitAuthGuardService,
     RequireAnonGuardService,
     RequireUserGuardService,
-    ListUserService
+    UserService
   ],
   bootstrap: [AppComponent]
 })
