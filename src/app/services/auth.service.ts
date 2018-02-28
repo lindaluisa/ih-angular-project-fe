@@ -22,6 +22,20 @@ export class AuthService {
     return user;
   }
 
+  me(): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/me`, options)
+      .toPromise()
+      .then((user) => this.setUser(user))
+      .catch((err) => {
+        if (err.status === 404) {
+          this.setUser();
+        }
+      });
+  }
+
   signup(user: any): Promise<any> {
     const options = {
       withCredentials: true

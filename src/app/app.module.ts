@@ -11,12 +11,18 @@ import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 import { AuthService } from './services/auth.service';
+import { InitAuthGuardService } from './services/init-auth-guard.service'
+import { RequireAnonGuardService } from './services/require-anon-guard.service';
+import { RequireUserGuardService } from './services/require-user-guard.service';
 
 const routes: Routes = [
-  { path: '',  component: LandingPageComponent },
-  { path: 'auth/signup',  component: SignupPageComponent },
-  { path: 'auth/login',  component: LoginPageComponent }
+  { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'auth/signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
+  { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
+  // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
+  { path: '**', redirectTo: '' }
  ];
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,12 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService, 
+    InitAuthGuardService,
+    RequireAnonGuardService,
+    RequireUserGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
