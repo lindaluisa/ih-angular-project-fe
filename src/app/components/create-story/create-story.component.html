@@ -4,7 +4,7 @@
 
 <!-- poner un boton para desplegar la form "on click" */ -->
 
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+<form (ngSubmit)="createStory()" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
   <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
     <label>New story</label>

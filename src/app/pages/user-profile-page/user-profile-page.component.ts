@@ -11,6 +11,10 @@ import { UserService } from '../../services/user.service';
 export class UserProfilePageComponent implements OnInit {
   user: Object;
   userId: String;
+  story: String;
+  feedbackEnabled = false;
+  error = null;
+  processing = false;
 
   constructor(private entryService: UserService, private route: ActivatedRoute) { }
 
@@ -20,6 +24,24 @@ export class UserProfilePageComponent implements OnInit {
 
     this.entryService.getOneUser(this.userId)
     .then((result) => this.user =result);
+  }
+
+  submitForm($event) {
+    this.story = $event;
+    this.error = '';
+    this.feedbackEnabled = true;
+    if (story.valid) {
+      this.processing = true;
+      this.entryService.createStory(story: this.story)
+        .then((result) => {
+          this.router.navigate(['/users']);
+        })
+        .catch((err) => {
+          this.error = err.error.error; // :-)
+          this.processing = false;
+          this.feedbackEnabled = false;
+        });
+    }
   }
 
 }

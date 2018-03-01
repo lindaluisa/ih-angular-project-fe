@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { StoryService } from '../../services/story.service';
+
 
 @Component({
   selector: 'app-create-story',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateStoryComponent implements OnInit {
 
-  constructor() { }
+  story: string;
+
+  constructor(public entryService: StoryService, private router: Router) { }
+
+  @Output() createStoryEvent = new EventEmitter<string>();
 
   ngOnInit() {
+  }
+
+  createStory(){
+    this.createStoryEvent.emit(this.story)
   }
 
 }
