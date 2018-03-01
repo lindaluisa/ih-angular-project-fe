@@ -1,0 +1,24 @@
+<p>
+  create-story works!
+</p>
+
+<!-- poner un boton para desplegar la form "on click" */ -->
+
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
+    <label>New story</label>
+    <textarea class="form-control" type="text" name="story" [(ngModel)]="story" #storyField="ngModel" required minlength="1" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && storyField.errors">
+      <p *ngIf="storyField.errors.required" class="validation">text required</p>
+      <p *ngIf="storyField.errors.minlength" class="validation">you have to write something!!!</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Login</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+  </div>
+</form>
