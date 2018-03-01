@@ -57,7 +57,7 @@ p {
 }
 
 .background-image {
-  background: url('assets/images/sharemo_bg2.png');
+  background: url('../assets/images/sharemo_bg2.png');
   height: 80vh;
 }
 
