@@ -1,8 +1,7 @@
-<div *ngIf="userList">
+<div class="component" *ngIf="userList">
   <ul>
     <li *ngFor="let element of userList" class="user-element">
-      <a [routerLink]="['',element._id]"><span>{{element.username}}</span></a>
-      <p><img src={{element.image}}></p>
+      <a [routerLink]="['/users', element._id]"><span>{{element.username}}</span></a>
     </li>
   </ul>
 </div>

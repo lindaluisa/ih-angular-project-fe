@@ -18,8 +18,10 @@ export class UserService {
   }
 
   getOneUser(id): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/users/${id}`)
-    .toPromise()
-    .then((res: Response) => res.json());
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/users/${id}`, options)
+    .toPromise();
   }
 }

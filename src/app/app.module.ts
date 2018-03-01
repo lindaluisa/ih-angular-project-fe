@@ -13,6 +13,7 @@ import { UserListPageComponent } from './pages/user-list-page/user-list-page.com
 import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
 
 import { ListUsersComponent } from './components/list-users/list-users.component';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 
 import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './services/init-auth-guard.service'
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'auth/signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'users',  component: UserListPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'users/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService ] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
  ];
@@ -38,7 +40,8 @@ const routes: Routes = [
     LoginPageComponent,
     UserListPageComponent,
     ListUsersComponent,
-    UserProfilePageComponent
+    UserProfilePageComponent,
+    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
