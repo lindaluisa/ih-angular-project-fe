@@ -16,4 +16,10 @@ export class UserService {
     return this.httpClient.get(`${this.baseUrl}/users`, options)
       .toPromise();
   }
+
+  getOneUser(id): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/users/${id}`)
+    .toPromise()
+    .then((res: Response) => res.json());
+  }
 }

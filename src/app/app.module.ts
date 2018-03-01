@@ -10,6 +10,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { UserListPageComponent } from './pages/user-list-page/user-list-page.component';
+import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
 
 import { ListUsersComponent } from './components/list-users/list-users.component';
 
@@ -36,7 +37,8 @@ const routes: Routes = [
     SignupPageComponent,
     LoginPageComponent,
     UserListPageComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    UserProfilePageComponent
   ],
   imports: [
     BrowserModule,
