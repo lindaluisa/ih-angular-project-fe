@@ -9,11 +9,11 @@ export class StoryService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createStory(user: any): Promise<any> {
+  createStory(story): Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/stories`, user, options)
+    return this.httpClient.post(`${this.API_URL}/stories`, story, options)
       .toPromise()
   }
 
