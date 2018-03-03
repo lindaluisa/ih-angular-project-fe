@@ -22,6 +22,8 @@ import { RequireAnonGuardService } from './services/require-anon-guard.service';
 import { RequireUserGuardService } from './services/require-user-guard.service';
 import { UserService } from './services/user.service';
 import { StoryService } from './services/story.service';
+import { ListStoriesComponent } from './components/list-stories/list-stories.component';
+import { SingleStoryComponent } from './components/single-story/single-story.component';
 
 
 const routes: Routes = [
@@ -45,7 +47,9 @@ const routes: Routes = [
     ListUsersComponent,
     UserProfilePageComponent,
     ProfileUserComponent,
-    CreateStoryComponent
+    CreateStoryComponent,
+    ListStoriesComponent,
+    SingleStoryComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class StoryService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createStory(story): Promise<any> {
+  createStory(story: any): Promise<any> {
     const options = {
       withCredentials: true
     };
