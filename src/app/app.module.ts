@@ -10,20 +10,26 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { UserListPageComponent } from './pages/user-list-page/user-list-page.component';
+import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
 
 import { ListUsersComponent } from './components/list-users/list-users.component';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { CreateStoryComponent } from './components/create-story/create-story.component';
 
 import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './services/init-auth-guard.service'
 import { RequireAnonGuardService } from './services/require-anon-guard.service';
 import { RequireUserGuardService } from './services/require-user-guard.service';
 import { UserService } from './services/user.service';
+import { StoryService } from './services/story.service';
+
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'auth/signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'users',  component: UserListPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'users/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService ] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
  ];
@@ -36,7 +42,10 @@ const routes: Routes = [
     SignupPageComponent,
     LoginPageComponent,
     UserListPageComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    UserProfilePageComponent,
+    ProfileUserComponent,
+    CreateStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,8 @@ const routes: Routes = [
     InitAuthGuardService,
     RequireAnonGuardService,
     RequireUserGuardService,
-    UserService
+    UserService,
+    StoryService
   ],
   bootstrap: [AppComponent]
 })

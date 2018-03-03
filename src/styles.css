@@ -76,6 +76,10 @@ p {
 
 /* ---- components ---- */
 
+.component {
+  border: 1px solid gray;
+  margin: 10px;
+}
 
 /* -- forms -- */
 

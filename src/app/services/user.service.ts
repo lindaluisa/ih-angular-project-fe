@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class UserService {
 
-  private baseUrl = 'http://localhost:3000';
+  private API_URL = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) { }
   
@@ -13,7 +13,15 @@ export class UserService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/users`, options)
+    return this.httpClient.get(`${this.API_URL}/users`, options)
       .toPromise();
+  }
+
+  getOneUser(id): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/users/${id}`, options)
+    .toPromise();
   }
 }
