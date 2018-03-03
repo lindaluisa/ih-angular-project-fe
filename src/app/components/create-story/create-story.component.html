@@ -4,11 +4,11 @@
 
 <!-- poner un boton para desplegar la form "on click" */ -->
 
-<form (ngSubmit)="createStory()" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
   <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
     <label>New story</label>
-    <textarea class="form-control" type="text" name="story" [(ngModel)]="story" #storyField="ngModel" required minlength="1" [disabled]="processing"/>
+    <textarea class="form-control" type="text" name="story" [(ngModel)]="story" #storyField="ngModel" required minlength="1" [disabled]="processing"></textarea>
     <div *ngIf="feedbackEnabled && storyField.errors">
       <p *ngIf="storyField.errors.required" class="validation">text required</p>
       <p *ngIf="storyField.errors.minlength" class="validation">you have to write something!!!</p>

@@ -11,6 +11,7 @@
     <div *ngIf="!loading && !!user">
       <a [routerLink]="['/profile']">{{user.username}}</a>
       <a (click)="logout($event)">logout</a>
+      <a [routerLink]="['/users']">users</a>
     </div>
     <div *ngIf="!loading && anon">
       <a [routerLink]="['/login']">login</a>

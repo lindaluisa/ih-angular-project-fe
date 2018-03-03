@@ -10,7 +10,10 @@ import { StoryService } from '../../services/story.service';
 })
 export class CreateStoryComponent implements OnInit {
 
-  story: string;
+  feedbackEnabled = false;
+  error = null;
+  processing = false;
+  story: any;
 
   constructor(public entryService: StoryService, private router: Router) { }
 
@@ -19,8 +22,14 @@ export class CreateStoryComponent implements OnInit {
   ngOnInit() {
   }
 
-  createStory(){
-    this.createStoryEvent.emit(this.story)
+
+  submitForm(form) {
+    this.error = '';
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      this.processing = true;
+      this.createStoryEvent.emit(this.story)
+    }
   }
 
 }
