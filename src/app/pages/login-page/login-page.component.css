@@ -1,9 +1,5 @@
 .background-image {
-<<<<<<< HEAD
-  background: url('../../assets/images/sharemo_bg.png');
-=======
   background: url('../../../assets/images/sharemo-bg.png');
->>>>>>> 6330cc2df8e4cd11fc499c0b88d43e1c43c28d6e
   background-repeat: no-repeat; 
   background-size: cover;
   padding-top: 5vh;
