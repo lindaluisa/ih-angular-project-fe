@@ -1,10 +1,28 @@
 .sharemo-logo {
   font-family: 'Pacifico';
-  font-size: 25px;
+  font-size: 20px;
+  position: static;
+  top: 10vh;
+
 }
 
 .navbar {
   /* background-color: #E3AC0B; */
-  background-color: #fbf8b1;
+  /* border-bottom: white 2px solid; */
+  padding: 15px;
+  /* background: linear-gradient(#fafd8152,#efff00); */
+  background: linear-gradient(#f2d020,#f2dd36);
 }
 
+
+.footer {
+  background: linear-gradient(#f2dd36,#f2d020);
+  padding: 5vh;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  background-color: none;
+  color:black;
+}

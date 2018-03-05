@@ -1,8 +1,19 @@
 <div class="background-image">
-  <div class="container">
-    <h1 class="sharemo-title">Sharemo</h1>
-    <button [routerLink]="['auth/login']" class="btn btn-dark">login</button>
-    <button [routerLink]="['auth/signup']" class="btn btn-dark">signup</button>
-  </div>
+  <div class="card">
+      <div>
+        <h1 class="sharemo-title">Sharemo</h1>
+        <div class="sharemo-description">
+          <h4><strong>Join the biggest Alzheimer's caregiver community</strong></h4>
+          <h6>Share your experience.</h6>
+          <h6>Connect and empower.</h6>
+        </div>
+
+        <img src="./assets/images/sharemo-logo.png" class="sharemo-logo" width="100" height="80" alt="">
+      </div>
+      <div>
+          <button [routerLink]="['auth/login']" class="btn btn-outline-dark">login</button>
+          <button [routerLink]="['auth/signup']" class="btn btn-outline-dark">signup</button>
+        </div>
+    </div>
 
 </div>

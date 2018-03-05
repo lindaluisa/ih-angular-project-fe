@@ -12,7 +12,6 @@ body {
   height: 0;
 }
 
-
 /* ---- typography ---- */
 
 body {
@@ -57,8 +56,13 @@ p {
 }
 
 .background-image {
-  background: url('../assets/images/sharemo_bg2.png');
-  height: 80vh;
+  /* background: url('./assets/images/sharemo_bg2.png'); */
+  background: url('./assets/images/sharemo_bg.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  padding-top: 5vh;
+  min-height: 90vh;
+  background-position: center
 }
 
 .section {
@@ -110,7 +114,6 @@ form .submit button {
   padding: 5px 20px;
   text-align: center;
   font-size: 16px;
-  background-color: #27afdc;
   cursor: pointer;
 }
 
@@ -125,4 +128,3 @@ form .field.has-error label {
 form .field.has-error input {
 	border: 1px solid  red;
 }
-

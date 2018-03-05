@@ -1,0 +1,28 @@
+.background-image {
+  background: url('../../../assets/images/sharemo_bg.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  padding-top: 5vh;
+  min-height: 90vh;
+  background-position: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  width: 50vh;
+  padding: 60px;
+  box-shadow: 5px 10px;
+  -webkit-box-shadow: 10px 21px 25px -1px rgba(247,255,133,1);
+  -moz-box-shadow: 10px 21px 25px -1px rgba(247,255,133,1);
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 7px 20px 0px rgb(45, 47, 18);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background-color: rgb(242, 216, 44);
+}

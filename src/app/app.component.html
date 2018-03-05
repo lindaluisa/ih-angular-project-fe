@@ -1,7 +1,9 @@
 <nav class="navbar navbar-light">
-  <a class="navbar-brand sharemo-logo" href="#">
-    <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
-    Sharemo
+  <a class="navbar-brand" href="#">
+    <div class="sharemo-logo d-inline-block">
+      Sharemo
+    </div> 
+    <img src="./assets/images/sharemo-logo.png" width="50" height="40" class="" alt="">
   </a>
   
   <div [ngClass]="{'is-user': user, 'is-anon': anon}">
@@ -23,12 +25,12 @@
 
 <router-outlet></router-outlet>
 
-<div class="footer text-muted">    
+<div class="footer">    
   <div class="container footer-wrapper">               
     <p>
       <span class="footer-element"><em>Coded by</em></span>
       <span class="footer-element"><i class="fa fa-github"></i></span>
-      <a href="https://github.com/victorpellerin" target="_blank"><strong>Victor</strong></a>                       
+      <a href="https://github.com/victorpellerin" target="_blank"><strong>victorpellerin  </strong></a>                       
       <span class="footer-element"><em>and</em></span> 
       <span class="footer-element"><i class="fa fa-github"></i></span>
       <a href="https://github.com/lindaluisa" target="_blank"><strong>lindaluisa</strong></a>
