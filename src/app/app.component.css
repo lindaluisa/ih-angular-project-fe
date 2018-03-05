@@ -26,3 +26,11 @@
   background-color: none;
   color:black;
 }
+
+.greeting-user {
+  color: black;
+}
+
+.logout-btn {
+  margin-left: 5px;
+}

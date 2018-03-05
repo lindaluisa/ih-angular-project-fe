@@ -11,13 +11,9 @@
       <span class="username text">loading...</span>
     </div>
     <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/profile']">{{user.username}}</a>
-      <a (click)="logout($event)">logout</a>
+      <a class="greeting-user" [routerLink]="['/profile']">Hello, {{user.username}}</a>
+      <button class="btn btn-outline-dark logout-btn" (click)="logout($event)">logout</button>
       <a [routerLink]="['/users']">users</a>
-    </div>
-    <div *ngIf="!loading && anon">
-      <a [routerLink]="['/login']">login</a>
-      <a [routerLink]="['/signup']">signup</a>
     </div>
   </div>
 
