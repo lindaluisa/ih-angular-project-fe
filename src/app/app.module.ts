@@ -24,6 +24,7 @@ import { UserService } from './services/user.service';
 import { StoryService } from './services/story.service';
 import { ListStoriesComponent } from './components/list-stories/list-stories.component';
 import { SingleStoryComponent } from './components/single-story/single-story.component';
+import { StoryPageComponent } from './pages/story-page/story-page.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'users',  component: UserListPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'users/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'story/:id',  component: StoryPageComponent, canActivate: [ RequireUserGuardService ] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
  ];
@@ -49,7 +51,8 @@ const routes: Routes = [
     ProfileUserComponent,
     CreateStoryComponent,
     ListStoriesComponent,
-    SingleStoryComponent
+    SingleStoryComponent,
+    StoryPageComponent
   ],
   imports: [
     BrowserModule,

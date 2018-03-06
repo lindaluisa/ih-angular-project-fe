@@ -1,0 +1,19 @@
+.form-wrapper {
+  padding: 10px;
+  text-align: center;
+}
+
+.single-story-box {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.form-control {
+  background-color: #ffea5e;
+  border: 1px black solid;
+  margin: 10px;
+}
+
+a:hover {
+  background-color: #b2bb2191;
+}

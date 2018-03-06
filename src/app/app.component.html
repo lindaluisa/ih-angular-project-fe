@@ -13,7 +13,7 @@
     <div *ngIf="!loading && !!user">
       <a class="greeting-user" [routerLink]="['/profile']">Hello, {{user.username}}</a>
       <button class="btn btn-outline-dark logout-btn" (click)="logout($event)">logout</button>
-      <a [routerLink]="['/users']">users</a>
+      <!-- <a [routerLink]="['/users']">users</a> -->
     </div>
   </div>
 
@@ -30,6 +30,8 @@
       <span class="footer-element"><em>and</em></span> 
       <span class="footer-element"><i class="fa fa-github"></i></span>
       <a href="https://github.com/lindaluisa" target="_blank"><strong>lindaluisa</strong></a>
+      <span class="footer-element"><em>with</em></span>
+      <span class="footer-element"><i class="fa fa-heart"></i></span>
     </p>              
   </div>     
 </div>

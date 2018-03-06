@@ -1,9 +1,17 @@
-<p>
-  list-stories works!
-</p>
+<div class="form-wrapper">
+  <h2>Your stories</h2>
+  
+  <ul>
+    <li class="form-control" *ngFor="let story of stories">
+      <p>{{story.message}}</p>
+      <!-- <p>{{story._id}}</p> -->
+        <a [routerLink]="['/story', story._id]">
+          <button class="btn btn-outline-dark respond-btn" type="submit">Respond</button>
+        </a>
 
-<div class="component">
-  <div *ngFor="let story of stories">{{story.message}}</div>
+    </li>
+  </ul>
 </div>
+
 
 <!-- <app-single-story></app-single-story> -->

@@ -5,25 +5,24 @@
 </p> -->
 <!-- <div class="collapse" id="collapseExample">
   <div class="card card-body"> -->
-
+<div class="form-wrapper">
     <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-
       <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
-        <label>New story</label>
+        <label><strong>Share experience</strong></label>
         <textarea class="form-control" type="text" name="story" [(ngModel)]="story" #storyField="ngModel" required minlength="1" [disabled]="processing"></textarea>
         <div *ngIf="feedbackEnabled && storyField.errors">
-          <p *ngIf="storyField.errors.required" class="validation">text required</p>
-          <p *ngIf="storyField.errors.minlength" class="validation">you have to write something!!!</p>
+          <p *ngIf="storyField.errors.required" class="validation">Text field is required</p>
+          <p *ngIf="storyField.errors.minlength" class="validation">Tell the community how you are doing</p>
         </div>
       </div>
-
       <div class="field submit">
-        <button type="submit" [disabled]="processing">Create Story</button>
+        <button class="btn btn-dark" type="submit" [disabled]="processing">Share you experience</button>
         <div *ngIf="feedbackEnabled && form.invalid">
           <p class="validation">there are errors in the form, please review the fields</p>
         </div>
       </div>
     </form>
+</div>
 
   <!-- </div>
 </div> -->

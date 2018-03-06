@@ -1,0 +1,11 @@
+.form-wrapper {
+  padding: 10px;
+  text-align: center;
+}
+
+.form-control {
+  background-color: #fff7c4;
+  border: 1px black solid;
+  margin: 15px;
+}
+
