@@ -2,4 +2,8 @@
   list-stories works!
 </p>
 
-<app-single-story></app-single-story>
+<div class="component">
+  <p *ngFor="let story of stories">{{story.message}}</p>
+</div>
+
+<!-- <app-single-story></app-single-story> -->

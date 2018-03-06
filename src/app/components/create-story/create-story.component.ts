@@ -28,7 +28,7 @@ export class CreateStoryComponent implements OnInit {
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      this.createStoryEvent.emit(this.story)
+      this.createStoryEvent.emit(this.story);
     }
   }
 

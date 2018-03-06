@@ -19,5 +19,13 @@ export class StoryService {
       .toPromise()
   }
 
+  getStories(id): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/${id}`, options)
+      .toPromise()
+  }
+
 }
 

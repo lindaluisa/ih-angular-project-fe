@@ -14,6 +14,7 @@ import { StoryService } from '../../services/story.service';
 export class UserProfilePageComponent implements OnInit {
   user: Object;
   userId: String;
+  stories: any;
 
   constructor(private storyService: StoryService, private userService: UserService, private route: ActivatedRoute) { }
 
@@ -22,11 +23,16 @@ export class UserProfilePageComponent implements OnInit {
     .subscribe((params) => this.userId = params['id']);
 
     this.userService.getOneUser(this.userId)
-    .then((result) => this.user =result);
+    .then((result) => this.user = result);
+
+    this.storyService.getStories(this.userId)
+    .then((result) => this.stories = result);
   }
 
   handleStoryEvent(event){
     this.storyService.createStory({event});
   }
+
+
 
 }
