@@ -1,5 +1,6 @@
+<div *ngIf="!user">Loading</div>
 <div class="background-image">
-  <p>
-    story-page works!
-  </p>
+  <p>{{user.username}}</p>
+  <p>{{story.message}}</p>
+  <!-- <p *ngFor="let reply of replies">{{story.replies.reply}}</p> -->
 </div>

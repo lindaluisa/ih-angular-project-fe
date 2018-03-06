@@ -25,7 +25,7 @@ export class UserProfilePageComponent implements OnInit {
     this.userService.getOneUser(this.userId)
     .then((result) => this.user = result);
 
-    this.storyService.getStories(this.userId)
+    this.storyService.getUserStories(this.userId)
     .then((result) => this.stories = result);
   }
 
