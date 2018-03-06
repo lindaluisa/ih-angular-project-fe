@@ -29,6 +29,7 @@ export class CreateStoryComponent implements OnInit {
     if (form.valid) {
       this.processing = true;
       this.createStoryEvent.emit(this.story);
+      this.processing = false;
     }
   }
 
