@@ -1,5 +1,5 @@
 <div *ngIf="!story">Loading</div>
-<div class="background-image" *ngIf="story">
+<div *ngIf="story">
   <p>{{story.owner.username}}</p>
   <p>{{story.message}}</p>
   <p *ngFor="let reply of story.replies">{{reply.author.username}}: {{reply.reply}}</p>
