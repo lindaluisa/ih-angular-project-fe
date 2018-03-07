@@ -1,8 +1,9 @@
-<div *ngIf="!user">Loading</div>
-<div class="background-image" *ngIf="user">
-  <p>{{user.username}}</p>
+<div *ngIf="!story">Loading</div>
+<div class="background-image" *ngIf="story">
+  <p>{{story.owner.username}}</p>
   <p>{{story.message}}</p>
-  <p *ngFor="let reply of story.replies">{{reply.author}}: {{reply.reply}}</p>
+  <p *ngFor="let reply of story.replies">{{reply.author.username}}: {{reply.reply}}</p>
+  <!-- <p *ngFor="let reply of story.replies">{{reply.author}}: {{reply.reply}}</p> -->
   <div>
     <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
       <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">

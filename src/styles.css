@@ -48,14 +48,7 @@ p {
 }
 
 #site-main {
-  margin-bottom: 60px;
-}
-
-.container {
-  margin: 0 20px;
-}
-
-.background-image {
+  padding-bottom: 60px;
   background: url('./assets/images/sharemo-bg.png');
   background-repeat: no-repeat; 
   background-size: cover;

@@ -26,8 +26,6 @@ export class StoryPageComponent implements OnInit {
     this.storyService.getOneUserStory(this.storyId)
     .then((result) => {
       this.story = result
-      this.userService.getOneUser(this.story.owner)
-      .then((result) => this.user = result);
     });
   }
 
@@ -39,7 +37,6 @@ export class StoryPageComponent implements OnInit {
       this.storyService.createReply(this.reply, this.storyId)
         .then((result) => {
           window.location.reload();
-          //this.router.navigate(['/users']);
         })
         .catch((err) => {
           this.error = err.error.error; // :-)
