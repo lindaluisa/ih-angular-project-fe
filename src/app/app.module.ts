@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'auth/login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'users',  component: UserListPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'users/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'users/me/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'story/:id',  component: StoryPageComponent, canActivate: [ RequireUserGuardService ] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }

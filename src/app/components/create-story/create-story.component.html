@@ -5,7 +5,7 @@
 </p> -->
 <!-- <div class="collapse" id="collapseExample">
   <div class="card card-body"> -->
-<div class="form-wrapper">
+<div *ngIf="user" class="form-wrapper">
     <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
       <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
         <label><strong>Share experience</strong></label>
