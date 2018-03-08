@@ -1,12 +1,17 @@
-<p>
-  user-profile-page works!
-</p>
+<div class="wrapper-page">
 
-<app-profile-user [user]="user"></app-profile-user>
 
-<app-create-story (createStoryEvent)="handleStoryEvent($event)"></app-create-story>
+  <app-profile-user [user]="user"></app-profile-user>
 
-<app-list-stories></app-list-stories>
+  <app-create-story 
+    [user]="user" 
+    [currentUser]="currentUser" 
+    (createStoryEvent)="handleStoryEvent($event)" 
+    *ngIf="currentUser._id === user._id" >
+  </app-create-story>
+  
+  <app-list-stories [stories]="stories"></app-list-stories>
+</div>
 
 
 

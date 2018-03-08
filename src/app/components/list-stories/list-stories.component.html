@@ -1,5 +1,16 @@
-<p>
-  list-stories works!
-</p>
+  <div class="background-image">
+      <h2>Your stories</h2>
+  <ul>
+    <li class="card" *ngFor="let story of stories">
+      <p>{{story.message}}</p>
+      <!-- <p>{{story._id}}</p> -->
+        <a [routerLink]="['/story', story._id]">
+          <button class="btn btn-outline-dark respond-btn" type="submit"><span><i class="fa fa-reply"></i> Reply</span></button>
+        </a>
 
-<app-single-story></app-single-story>
+    </li>
+  </ul>
+</div>
+
+
+<!-- <app-single-story></app-single-story> -->

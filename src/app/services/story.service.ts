@@ -15,7 +15,36 @@ export class StoryService {
     const options = {
       withCredentials: true
     };
+    console.log(story)
     return this.httpClient.post(`${this.API_URL}`, story, options)
+      .toPromise()
+  }
+
+  getUserStories(userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/user-stories/${userId}`, options)
+      .toPromise()
+  }
+
+  getOneUserStory(storyId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/user-story/${storyId}`, options)
+      .toPromise()
+  }
+
+  createReply(reply: any, storyId: string): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    const data = {
+      reply,
+      storyId
+    }
+    return this.httpClient.post(`${this.API_URL}/new-reply`, data, options)
       .toPromise()
   }
 

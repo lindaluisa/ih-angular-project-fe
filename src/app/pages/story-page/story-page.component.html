@@ -1,0 +1,45 @@
+<div *ngIf="!story">Loading</div>
+
+  <div class="card-owner" *ngIf="story">
+    <div>
+        <span><i class="fa fa-user-circle"></i><strong><p>{{story.owner.username}}</p></strong></span>
+    </div>
+    <div class="text-user-left">
+        <p> {{story.message}}</p>
+    </div>
+  </div> 
+
+<div *ngIf="story" >  
+    <!-- xxx {{currentUser._id}} --XXX-- {{story.owner._id}} -->
+  <div class="card" *ngFor="let reply of story.replies">
+    <div class="text-user-right">
+      {{reply.reply}}
+    </div>
+    <div>
+      <span>
+        <i class="icon-username fa fa-user-circle reply-user"></i>
+        <strong><p class="icon-username">{{reply.author.username}}</p></strong>
+      </span>
+    </div>
+  </div>
+</div>
+
+  <!-- <p *ngFor="let reply of story.replies">{{reply.author}}: {{reply.reply}}</p> -->
+  <div class="card card-bottom">
+    <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+      <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
+        <label><strong>Reply</strong></label>
+        <textarea crows="4" cols="50" lass="form-control" type="text" name="reply" [(ngModel)]="reply" #storyField="ngModel" required minlength="1" [disabled]="processing"></textarea>
+        <div *ngIf="feedbackEnabled && storyField.errors">
+          <p *ngIf="storyField.errors.required" class="validation">Text field is required</p>
+          <p *ngIf="storyField.errors.minlength" class="validation">Tell the community how you are doing</p>
+        </div>
+      </div>
+      <div class="field submit">
+        <button class="btn btn-outline-dark respond-btn" type="submit" [disabled]="processing"><span><i class="fa fa-reply"></i> Reply</span></button>
+        <div *ngIf="feedbackEnabled && form.invalid">
+          <p class="validation">there are errors in the form, please review the fields</p>
+        </div>
+      </div>
+    </form>
+  </div>

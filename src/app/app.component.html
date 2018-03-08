@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light">
-  <a class="navbar-brand"  [routerLink]="['/']">
+  <a class="navbar-brand" href="./users">
     <div class="sharemo-logo d-inline-block">
       Sharemo
     </div> 
@@ -11,19 +11,19 @@
       <span class="username text">loading...</span>
     </div>
     <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/profile']">{{user.username}}</a>
-      <a (click)="logout($event)">logout</a>
-      <a [routerLink]="['/users']">users</a>
-    </div>
-    <div *ngIf="!loading && anon">
-      <a [routerLink]="['/login']">login</a>
-      <a [routerLink]="['/signup']">signup</a>
+      <a class="greeting-user" [routerLink]="['/users/me', user._id]">Hello, {{user.username}}</a>
+      <button class="btn btn-outline-dark logout-btn" (click)="logout($event)">logout</button>
+      <!-- <a [routerLink]="['/users']">users</a> -->
     </div>
   </div>
 
 </nav>
 
-<router-outlet></router-outlet>
+<div id="site-main"> <!--background here -->
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
 <div class="footer">    
   <div class="container footer-wrapper">               
@@ -34,6 +34,8 @@
       <span class="footer-element"><em>and</em></span> 
       <span class="footer-element"><i class="fa fa-github"></i></span>
       <a href="https://github.com/lindaluisa" target="_blank"><strong>lindaluisa</strong></a>
+      <span class="footer-element"><em>with</em></span>
+      <span class="footer-element"><i class="fa fa-heart"></i></span>
     </p>              
   </div>     
 </div>

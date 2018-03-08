@@ -31,7 +31,17 @@ p {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 /* ---- layout ---- */
 
@@ -48,20 +58,11 @@ p {
 }
 
 #site-main {
-  margin-bottom: 60px;
-}
-
-.container {
-  margin: 0 20px;
-}
-
-.background-image {
   background: url('./assets/images/sharemo-bg.png');
-  background-repeat: no-repeat; 
-  background-size: cover;
-  padding-top: 5vh;
   min-height: 90vh;
-  background-position: center
+  background-position: center;
+  /* background-size: cover; */
+  padding: 5vh 0;
 }
 
 .section {
@@ -70,6 +71,7 @@ p {
 }
 
 @media (min-width: 768px) {
+  
   .container {
     max-width: 728px;
     margin: 0 auto;
@@ -79,12 +81,15 @@ p {
 
 /* ---- components ---- */
 
-.component {
-  border: 1px solid gray;
-  margin: 10px;
-}
 
 /* -- forms -- */
+.navbar {
+  /* background-color: #E3AC0B; */
+  /* border-bottom: white 2px solid; */
+  padding: 15px;
+  /* background: linear-gradient(#fafd8152,#efff00); */
+  background: linear-gradient(#f2d020,#f2dd36);
+}
 
 form.is-processing {
 	opacity: 0.5;

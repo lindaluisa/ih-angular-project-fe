@@ -25,6 +25,9 @@
 	align-items: center;
 	align-content: space-between;
 }
+.login-btn {
+  padding: auto 50px;
+}
 
 .sharemo-logo {
   display: block;

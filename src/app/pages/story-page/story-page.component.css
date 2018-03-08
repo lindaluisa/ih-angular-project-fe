@@ -1,0 +1,65 @@
+.fa-user-circle {
+  color: #979b0e;
+  font-size: 30px;
+}
+
+.reply-user {
+  color: #eba601;
+  font-size: 30px;
+  text-align: right;
+}
+
+.card-bottom {
+  background: linear-gradient(#ffe239, #fdf3b8a1);
+  padding: 20px;
+}
+
+.card-owner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  max-width: 80vh;
+  padding: 20px;
+  background: linear-gradient(#ffe239,#fdf3b8a1);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: left;
+  align-content: space-around;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-start; */
+  max-width: 80vh;
+  padding: 35px;;
+  background: linear-gradient(#fdf3b8a1, #ffe239);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+}
+
+.text-user-left {
+  margin-left: 25px;
+
+}
+
+.text-user-right {
+  margin-right: 25px;
+  text-align: left;
+  text-align: justify;
+} 
+
+.icon-username {
+text-align: right;
+padding-right: 25px;
+}

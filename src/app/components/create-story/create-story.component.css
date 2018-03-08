@@ -1,0 +1,15 @@
+.form-wrapper {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  background-color: #fff7c4;
+  border: 1px white solid;
+  margin: 15px;
+  max-width: 70vh;
+  background: linear-gradient(#fffada,#fff098);
+}
+

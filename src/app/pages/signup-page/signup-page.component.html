@@ -1,5 +1,7 @@
-<div class="background-image">
-  <div class="card">
+<div>
+ 
+  <div class="card site-main">
+  <h4>Sign Up</h4>
   <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
       <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
