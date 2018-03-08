@@ -1,8 +1,9 @@
+
 <div *ngIf="userList">
-  <div class="wrapper-card">
+  <div>
     <ul>
       <li  *ngFor="let element of userList" class="user-element">
-        <a class="card" [routerLink]="['/users', element._id]"><span><strong>{{element.username}}</strong></span></a>
+        <a class=" card" [routerLink]="['/users', element._id]"><span><i class="fa fa-user-circle"></i><strong>  {{element.username}}</strong></span></a>
       </li>
     </ul>
   </div>

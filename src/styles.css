@@ -60,7 +60,9 @@ li {
 #site-main {
   background: url('./assets/images/sharemo-bg.png');
   min-height: 90vh;
-  background-position: center
+  background-position: center;
+  background-size: cover;
+  padding: 5vh 0;
 }
 
 .section {
@@ -81,6 +83,13 @@ li {
 
 
 /* -- forms -- */
+.navbar {
+  /* background-color: #E3AC0B; */
+  /* border-bottom: white 2px solid; */
+  padding: 15px;
+  /* background: linear-gradient(#fafd8152,#efff00); */
+  background: linear-gradient(#f2d020,#f2dd36);
+}
 
 form.is-processing {
 	opacity: 0.5;

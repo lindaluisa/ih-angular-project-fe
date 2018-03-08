@@ -1,12 +1,11 @@
-<div class="form-wrapper">
-  <h2>Your stories</h2>
-  
+  <div>
+      <h2>Your stories</h2>
   <ul>
-    <li class="form-control" *ngFor="let story of stories">
+    <li class=" card" *ngFor="let story of stories">
       <p>{{story.message}}</p>
       <!-- <p>{{story._id}}</p> -->
         <a [routerLink]="['/story', story._id]">
-          <button class="btn btn-outline-dark respond-btn" type="submit">Respond</button>
+          <button class="btn btn-outline-dark respond-btn" type="submit"><span><i class="fa fa-reply"></i> Reply</span></button>
         </a>
 
     </li>

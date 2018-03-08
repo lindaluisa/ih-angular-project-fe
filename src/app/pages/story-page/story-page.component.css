@@ -1,0 +1,55 @@
+.fa-user-circle {
+  color: #979b0e;
+  font-size: 30px;
+}
+
+.reply-user {
+  color: #eba601;
+  font-size: 30px;
+  text-align: right;
+}
+
+.card-bottom {
+  background: linear-gradient(#ffe239, #fdf3b8a1);
+  padding: 20px;
+}
+
+
+.card-owner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  align-content: space-around;
+  width: 50vh;
+  padding: 20px;
+  background: linear-gradient(#ffe239,#fdf3b8a1);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50vh;
+  padding: 35px;;
+  background: linear-gradient(#fdf3b8a1, #ffe239);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+}
+
+.text-user-left {
+  margin-left: 25px;
+
+}
+
+.text-user-right {
+  margin-right: 50px;
+} 
