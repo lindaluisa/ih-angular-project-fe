@@ -13,8 +13,8 @@ import { AuthService } from '../../services/auth.service';
 
 
 export class UserProfilePageComponent implements OnInit {
-  currentUser: Object;
-  user: Object;
+  currentUser: any;
+  user: any;
   userId: String;
   stories: any;
 
