@@ -34,15 +34,12 @@ h2 {
   text-align: left
 }
 
-a:hover {
-  background-color: #b2bb2191;
-}
 
 .card { 
-  width: 50vh;
+  max-width: 70vh;
   border: 1px solid rgba(0, 0, 0, 0.12);  
-  padding: 25px;
-  margin-bottom: 5vh;
+  padding: 16px;
+  margin-bottom: 2px;
   background: linear-gradient(#ffe239,#fdf3b8a1);
   color: black;
   text-align: left;
