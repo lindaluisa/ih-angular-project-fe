@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StoryService } from '../../services/story.service';
 import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-story-page',
@@ -16,17 +17,18 @@ export class StoryPageComponent implements OnInit {
   error = null;
   processing = false;
   reply: any;
+  currentUser: Object;
 
-  constructor(private storyService: StoryService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private storyService: StoryService, private authService: AuthService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params
     .subscribe((params) => this.storyId = params['id']);
 
     this.storyService.getOneUserStory(this.storyId)
-    .then((result) => {
-      this.story = result
-    });
+    .then((result) => { this.story = result } );
+
+    this.currentUser = this.authService.getUser();
   }
 
   submitForm(form) {

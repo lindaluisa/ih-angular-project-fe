@@ -1,4 +1,5 @@
 <div *ngIf="!story">Loading</div>
+
   <div class="card-owner" *ngIf="story">
     <div>
         <span><i class="fa fa-user-circle"></i><strong><p>{{story.owner.username}}</p></strong></span>
@@ -8,8 +9,9 @@
     </div>
   </div> 
 
-<div *ngIf="story">
-  <div class="card"  *ngFor="let reply of story.replies">
+<div *ngIf="story" >  
+    <!-- xxx {{currentUser._id}} --XXX-- {{story.owner._id}} -->
+  <div class="card" *ngFor="let reply of story.replies">
     <div class="text-user-right">
       {{reply.reply}}
     </div>
