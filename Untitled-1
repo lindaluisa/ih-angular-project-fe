@@ -1,0 +1,6 @@
+
+
+  ngFor="message of messages"
+    xxxx {{currentUser._id === message.owner._id}} xxxx {{ currentUser._id }} xxxx {{ message.owner._id }}
+    <div [ngClass]="{'mine: currentUser._id === message.owner._id, 'other': currentUser._id !== message.owner._id}">
+    </div>

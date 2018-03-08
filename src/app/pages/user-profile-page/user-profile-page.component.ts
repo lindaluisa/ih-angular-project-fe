@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { StoryService } from '../../services/story.service';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -12,11 +13,12 @@ import { StoryService } from '../../services/story.service';
 
 
 export class UserProfilePageComponent implements OnInit {
+  currentUser: Object;
   user: Object;
   userId: String;
   stories: any;
 
-  constructor(private storyService: StoryService, private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private storyService: StoryService, private authService: AuthService, private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params
@@ -27,6 +29,8 @@ export class UserProfilePageComponent implements OnInit {
 
     this.storyService.getUserStories(this.userId)
     .then((result) => this.stories = result);
+
+    this.currentUser = this.authService.getUser();
   }
 
   handleStoryEvent(event){
