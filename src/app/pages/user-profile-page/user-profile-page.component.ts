@@ -34,9 +34,9 @@ export class UserProfilePageComponent implements OnInit {
   }
 
   handleStoryEvent(event){
-    this.storyService.createStory({event});
+    this.storyService.createStory({event})
+    .then((result) => {
+      window.location.reload()
+    });
   }
-
-
-
 }

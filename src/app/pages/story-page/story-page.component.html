@@ -29,7 +29,7 @@
     <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
       <div class="field form-group" [ngClass]="{'has-error': feedbackEnabled && storyField.errors}">
         <label><strong>Reply</strong></label>
-        <textarea class="form-control" type="text" name="reply" [(ngModel)]="reply" #storyField="ngModel" required minlength="1" [disabled]="processing"></textarea>
+        <textarea crows="4" cols="50" lass="form-control" type="text" name="reply" [(ngModel)]="reply" #storyField="ngModel" required minlength="1" [disabled]="processing"></textarea>
         <div *ngIf="feedbackEnabled && storyField.errors">
           <p *ngIf="storyField.errors.required" class="validation">Text field is required</p>
           <p *ngIf="storyField.errors.minlength" class="validation">Tell the community how you are doing</p>

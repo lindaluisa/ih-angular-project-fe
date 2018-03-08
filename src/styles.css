@@ -61,7 +61,7 @@ li {
   background: url('./assets/images/sharemo-bg.png');
   min-height: 90vh;
   background-position: center;
-  background-size: cover;
+  /* background-size: cover; */
   padding: 5vh 0;
 }
 

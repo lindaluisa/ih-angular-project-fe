@@ -1,7 +1,7 @@
-  <div>
+  <div class="background-image">
       <h2>Your stories</h2>
   <ul>
-    <li class=" card" *ngFor="let story of stories">
+    <li class="card" *ngFor="let story of stories">
       <p>{{story.message}}</p>
       <!-- <p>{{story._id}}</p> -->
         <a [routerLink]="['/story', story._id]">
